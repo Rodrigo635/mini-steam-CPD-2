@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+<div class="generos_div">
+    <h2>Jogos com categoria {{ genre }}</h2>
+</div>
+
+{% if erro %}
+    <p>{{ erro }}</p>
+{% endif %}
+
+{% if games %}
+    <table class="lista_de_jogos">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome do Jogo</th>
+                <th>Desenvolvedor</th>
+                <th>Categorias</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for game in games %}
+                <tr>
+                    <td>{{ game.id }}</td>
+                    <td>{{ game.name }}</td>
+                    <td>por {{ game.developer }}</td>
+                    <td>{{ game.genre }}</td>
+                    <td>R$ {{ game.price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
+<div class="nenhum_jogo">
+    {% if not games and not erro %}
+        <p>Nenhum jogo encontrado com o preço especificado.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

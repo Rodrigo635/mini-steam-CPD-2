@@ -1,0 +1,71 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="../static/css/index.css">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<section class="barra_pesquisa">
+    <div class="busca">
+
+        <p>Preço</p>
+        <div class="preco">
+            <form action="{% url 'buscar_jogos_por_preco' %}" method="POST">
+                {% csrf_token %}
+                <input type="text" name="busca_preco" id="busca_preco">
+                <button class="btn_preco" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+            
+        <p>Faixa de preços</p>
+        <div class="faixas">
+            <form action="{% url 'buscar_por_faixa_preco' %}" method="POST">
+                {% csrf_token %}
+                <input type="text" name="faixa1" id="faixa1">
+                <input type="text" name="faixa2" id="faixa2">
+                <button id="btn_faixa_preco"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+
+        <a href="{% url 'categorias' %}">Categorias</a>
+        
+    </div>
+</section>
+
+{% if erro %}
+    <p>{{ erro }}</p>
+{% endif %}
+
+{% if games %}
+    <table class="lista_de_jogos">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome do Jogo</th>
+                <th>Desenvolvedor</th>
+                <th>Categorias</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for game in games %}
+                <tr>
+                    <td>{{ game.id }}</td>
+                    <td>{{ game.name }}</td>
+                    <td>por {{ game.developer }}</td>
+                    <td>{{ game.genre }}</td>
+                    <td>R$ {{ game.price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
+<div class="nenhum_jogo">
+    {% if not games and not erro %}
+        <p>Nenhum jogo encontrado com o preço especificado.</p>
+    {% endif %}
+</div>
+
+{% endblock %}
+

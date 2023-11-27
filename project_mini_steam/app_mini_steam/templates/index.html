@@ -1,0 +1,51 @@
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/c6ea5c52f4.js" crossorigin="anonymous"></script>
+        <title>Mini Steam</title>
+    </head>
+
+
+    <body>
+
+        <header>
+            <a class="brand" href="{% url 'home' %}">Mini Steam</a>
+            <div class="menu-btn"></div>
+            <div class="navegation">
+                <div class="navegation-items">
+                    <a href="#">LOJA</a>
+                    <a href="#">COMUNIDADE</a>
+                    <a href="#">SOBRE</a>
+                    <a href="#">SUPORTE</a>
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <div class="nav-itens">
+                <a href="{% url 'home' %}">Sua loja</a>
+                <a href="#">Novidades e destaques</a>
+                <a href="{% url 'categorias' %}">Categorias</a>
+                <a href="#">Loja de pontos</a>
+                <a href="{% url 'noticias' %}">Notícias</a>
+                <a href="#">Laboratório</a>
+                <input type="text" placeholder="Procurar... ">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </nav>
+
+        <section class="search-bar">
+            <input type="text" placeholder="Procurar... ">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </section>
+        
+        {% block content %}
+
+        {% endblock %}
+
+    </body>
+
+</html>

@@ -1,0 +1,89 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<section class="categorias">
+
+    <div class="bloco_categorias">
+        <div class="column">
+            <a href="{% url 'games_por_genero' 'Ação' %}">Ação</a>
+            <a href="{% url 'games_por_genero' 'Anime' %}">Anime</a>
+            <a href="{% url 'games_por_genero' 'Arcade' %}">Arcade</a>
+            <a href="{% url 'games_por_genero' 'Aventura' %}">Aventura</a>
+            <a href="{% url 'games_por_genero' 'Beat em Up' %}">Beat 'em Up</a>
+            <a href="{% url 'games_por_genero' 'Caça' %}">Caça</a>
+            <a href="{% url 'games_por_genero' 'Casuais' %}">Casuais</a>
+            <a href="{% url 'games_por_genero' 'Competitivo On-line' %}">Competitivo On-line</a>
+            <a href="{% url 'games_por_genero' 'Construção e Automação' %}">Construção e Automação</a>
+            <a href="{% url 'games_por_genero' 'Corrida' %}">Corrida</a>
+            <a href="{% url 'games_por_genero' 'Cyberpunk' %}">Cyberpunk</a>
+            <a href="{% url 'games_por_genero' 'Defesa de Torres' %}">Defesa de Torres</a>
+            <a href="{% url 'games_por_genero' 'Encontros' %}">Encontros</a>
+            <a href="{% url 'games_por_genero' 'Empregos e Passatempos' %}">Empregos e Passatempos</a>
+            <a href="{% url 'games_por_genero' 'Espacial' %}">Espacial</a>
+            <a href="{% url 'games_por_genero' 'Espionagem' %}">Espionagem</a>
+            <a href="{% url 'games_por_genero' 'Espírito' %}">Espírito</a>
+            <a href="{% url 'games_por_genero' 'Esporte' %}">Esporte</a>
+        </div>
+        <div class="column">
+            <a href="{% url 'games_por_genero' 'Esporte em Equipe' %}">Esporte em Equipe</a>
+            <a href="{% url 'games_por_genero' 'Esportes Individuais' %}">Esportes Individuais</a>
+            <a href="{% url 'games_por_genero' 'Estratégia' %}">Estratégia</a>
+            <a href="{% url 'games_por_genero' 'Estratégia Baseada em Turnos' %}">Estratégia Baseada em Turnos</a>
+            <a href="{% url 'games_por_genero' 'Estratégia em Tempo Real' %}">Estratégia em Tempo Real</a>
+            <a href="{% url 'games_por_genero' 'Fabricação' %}">Fabricação</a>
+            <a href="{% url 'games_por_genero' 'Faz o que Quiser' %}">Faça o que quiser</a>
+            <a href="{% url 'games_por_genero' 'Ficção Científica' %}">Ficção Científica</a>
+            <a href="{% url 'games_por_genero' 'Física' %}">Física</a>
+            <a href="{% url 'games_por_genero' 'Hack and Slash' %}">Hack and Slash</a>
+            <a href="{% url 'games_por_genero' 'Imersivo' %}">Imersivo</a>
+            <a href="{% url 'games_por_genero' 'Investigação' %}">Investigação</a>
+            <a href="{% url 'games_por_genero' 'Jogo de Cartas' %}">Jogo de Cartas</a>
+            <a href="{% url 'games_por_genero' 'Jogo de Ritmo' %}">Jogo de Ritmo</a>
+            <a href="{% url 'games_por_genero' 'Jogos de Tabuleiro' %}">Jogos de Tabuleiro</a>
+            <a href="{% url 'games_por_genero' 'JRPGs' %}">JRPGs</a>
+            <a href="{% url 'games_por_genero' 'Luta e Artes Marciais' %}">Luta e Artes Marciais</a>
+        </div>
+        <div class="column">
+            <a href="{% url 'games_por_genero' 'Metroidvania' %}">Metroidvania</a>
+            <a href="{% url 'games_por_genero' 'Militar' %}">Militar</a>
+            <a href="{% url 'games_por_genero' 'Mistério' %}">Mistério</a>
+            <a href="{% url 'games_por_genero' 'MMO' %}">MMO</a>
+            <a href="{% url 'games_por_genero' 'Multijogador' %}">Multijogador</a>
+            <a href="{% url 'games_por_genero' 'Multijogador Local e em Grupo' %}">Multijogador Local e em Grupo</a>
+            <a href="{% url 'games_por_genero' 'Mundo Aberto' %}">Mundo Aberto</a>
+            <a href="{% url 'games_por_genero' 'Objetos Escondidos' %}">Objetos Escondidos</a>
+            <a href="{% url 'games_por_genero' 'Pescaria' %}">Pescaria</a>
+            <a href="{% url 'games_por_genero' 'Plataforma' %}">Plataforma</a>
+            <a href="{% url 'games_por_genero' 'Quebra-Cabeça' %}">Quebra-Cabeça</a>
+            <a href="{% url 'games_por_genero' 'RPG' %}">RPG</a>
+            <a href="{% url 'games_por_genero' 'RPGs de Ação' %}">RPGs de Ação</a>
+            <a href="{% url 'games_por_genero' 'RPGs de Aventura' %}">RPGs de Aventura</a>
+            <a href="{% url 'games_por_genero' 'RPGs de Estratégia' %}">RPGs de Estratégia</a>
+            <a href="{% url 'games_por_genero' 'RPGs em Grupos' %}">RPGs em Grupos</a>
+            <a href="{% url 'games_por_genero' 'RPGs em Turnos' %}">RPGs em Turnos</a>
+        </div>
+        <div class="column">
+            <a href="{% url 'games_por_genero' 'Roguelike' %}">Roguelike</a>
+            <a href="{% url 'games_por_genero' 'Romance Visual' %}">Romance Visual</a>
+            <a href="{% url 'games_por_genero' 'Rural' %}">Rural</a>
+            <a href="{% url 'games_por_genero' 'Simulação' %}">Simulação</a>
+            <a href="{% url 'games_por_genero' 'Simulação de Vida' %}">Simulação de Vida</a>
+            <a href="{% url 'games_por_genero' 'Simuladores Automobilísticos' %}">Simuladores Automobilísticos</a>
+            <a href="{% url 'games_por_genero' 'Simuladores de Esporte' %}">Simuladores de Esporte</a>
+            <a href="{% url 'games_por_genero' 'Shoot em Up' %}">Shoot 'em Up</a>
+            <a href="{% url 'games_por_genero' 'Sobrevivência' %}">Sobrevivência</a>
+            <a href="{% url 'games_por_genero' 'Somente Adultos' %}">Somente Adultos</a>
+            <a href="{% url 'games_por_genero' 'Space' %}">Space</a>
+            <a href="{% url 'games_por_genero' 'Survival' %}">Survival</a>
+            <a href="{% url 'games_por_genero' 'Terror' %}">Terror</a>
+            <a href="{% url 'games_por_genero' 'Tiro em Primeira Pessoa' %}">Tiro em Primeira Pessoa</a>
+            <a href="{% url 'games_por_genero' 'Tiro em Terceira Pessoa' %}">Tiro em Terceira Pessoa</a>
+            <a href="{% url 'games_por_genero' 'Trama Excepcional' %}">Trama Excepcional</a>
+            <a href="{% url 'games_por_genero' 'Um jogador' %}">Um jogador</a>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

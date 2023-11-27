@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --white-color: #e1e1e1;
+    --dark-blue-steam-color: #171d25;
+    --nav-color: #1d3b7d;
+    --bg: #1a2a3b;
+    --steam-blue: #1a9fff;
+    --dark-gray-blue: #316282;
+    --linear-gradient: linear-gradient(to left, #1b377a, #436994);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    opacity: 0.9;
+}
+
+a:hover {
+    opacity: 1;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--bg);
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--dark-blue-steam-color);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 35px 15%;
+}
+
+header .navegation {
+    position: relative;
+}
+
+header .brand {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--white-color);
+    text-decoration: none;
+    margin-right: 60px;
+}
+
+header .navegation .navegation-items a{
+    position: relative;
+    color: var(--white-color);
+    font-size: 1.2em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s ease;
+}
+
+header .navegation .navegation-items a:hover{
+    color: var(--steam-blue);
+}
+
+header .navegation .navegation-items a:before{
+    content: '';
+    position: absolute;
+    background: var(--steam-blue);
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .navegation .navegation-items a:hover:before{
+    width: 100%;
+}
+
+nav {
+    position: absolute;
+    display: flex;
+    margin-top: 150px;
+    width: 100%;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+}
+
+nav .nav-itens {
+    display: flex;
+    width: 71%;
+    background: linear-gradient(to left, #1b377a, #436994);
+    padding: 10px 0;
+}
+
+nav a {
+    padding: 0 14px;
+}
+
+nav .nav-itens a{
+    position: relative;
+    color: var(--white-color);
+    text-decoration: none;
+    opacity: 0.9;
+    transition: 0.3s ease;
+}
+
+nav .nav-itens a:hover {
+    opacity: 1;
+    color: var(--steam-blue)
+}
+
+nav input {
+    width: 24%;
+    border-radius: 4px;
+    border-style: none;
+    padding-left: 10px;
+    color: var(--white-color);
+    background: var(--dark-gray-blue);
+}
+
+nav .fa-magnifying-glass {
+    color: #1d3b7d;
+    background-color: #539ac5;
+    border-radius: 3px;
+    margin-left: 3px;
+    padding: 4px 4px;
+    align-self: center;
+    cursor: pointer;
+}
+
+section .search-bar {
+    display: none;
+}
+
+.lista_de_jogos {
+    width: 71%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: var(--dark-blue-steam-color);
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.lista_de_jogos th, .lista_de_jogos td {
+    border-top: 6px solid var(--bg);
+    border-bottom: 6px solid var(--bg);
+    padding: 15px;
+    text-align: left;
+    color: var(--white-color);
+}
+
+.lista_de_jogos th {
+    color: var(--white-color);
+    background-color: var(--dark-gray-blue);
+}
+
+.lista_de_jogos tr:hover {
+    background-color: var(--dark-gray-blue);
+}
+
+section.barra_pesquisa {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+section.barra_pesquisa .busca {
+    display: flex;
+    width: 71%;
+    height: 50px;
+    margin-top: 210px;
+    background-color: var(--dark-blue-steam-color);
+    align-items: center;
+}
+
+section.barra_pesquisa .busca a {
+    text-decoration: none;
+    color: var(--white-color);
+    margin-left: 125px;
+}
+
+section.barra_pesquisa .busca p {
+    color: var(--white-color);
+    padding-left: 20px;
+    text-wrap: nowrap;
+    margin-right: 5px;
+}
+
+section.barra_pesquisa .busca input{
+    width: 150px;
+    height: 20px;
+    border-radius: 4px;
+    border-style: none;
+    padding-left: 10px;
+    color: var(--white-color);
+    background: var(--dark-gray-blue);
+    margin-left: 5px;
+}
+
+section.barra_pesquisa .busca .fa-magnifying-glass {
+    color: #1d3b7d;
+}
+
+section.barra_pesquisa .busca button {
+    background-color: var(--dark-blue-steam-color);
+    background-color: #539ac5;
+    border-radius: 3px;
+    margin-left: 3px;
+    padding: 3.4px 3.4px;
+    align-self: center; 
+    border-style: none;
+    cursor: pointer;
+}
+
+.nenhum_jogo {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.nenhum_jogo p {
+    color: var(--white-color);
+    text-wrap: nowrap;
+}
+
+section.categorias {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+section.categorias .bloco_categorias{
+    width: 71%;
+    display: flex;
+    background-color: var(--dark-blue-steam-color);
+    height: 530px;
+    margin-top: 205px;
+    border-radius: 2px;
+    margin-bottom: 35px;
+}
+
+section.categorias .bloco_categorias .column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px;
+    background-color: var(--dark-blue-steam-color); /* Adjust background color as needed */
+    border-radius: 5px;
+    margin: 5px;
+    color: var(--white-color);
+}
+
+section.categorias .bloco_categorias .column a {
+    font-size: 1em;
+    margin-bottom: 4px;
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.generos_div {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.generos_div h2 {
+    margin-top: 210px;
+    color: var(--white-color);
+}
+
+section.noticias {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+section.noticias .noticias_div {
+    width: 71%;
+    display: flex;
+    background-color: var(--dark-blue-steam-color);
+    height: 250px;
+    margin-top: 205px;
+    border-radius: 2px;
+    margin-bottom: 35px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section.noticias .noticias_div h2{
+    color: var(--white-color);
+    text-align: center;
+}
+
+section.noticias .noticias_div a{
+    color: var(--steam-blue);
+    text-align: center;
+    text-decoration: none;
+}
+
+section.noticias .noticias_div p{
+    color: var(--white-color);
+    text-align: center;
+}
+
+@media screen and (max-width: 1366px) {
+    nav a {
+        padding: 10px 14px;
+
+    }
+    
+    nav .nav-itens a{
+        font-size: 0.8em;
+    }
+
+    nav input {
+        width: 25%;
+        height: 30px;
+        align-self: center;
+    }
+
+    nav .fa-magnifying-glass {
+        margin-left: 8px;
+    }
+}
+
+@media screen and (max-width: 1051px) {
+    nav a {
+        padding: 10px 14px;
+
+    }
+    
+    nav .nav-itens a{
+        font-size: 0.7em;
+    }
+
+    nav .nav-itens {
+        width: 81%;
+    }
+
+    .lista_de_jogos {
+        width: 81%;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    header {
+        padding: 20px 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    header .brand {
+        padding-bottom: 20px;
+        margin-right: 0;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav .nav-itens {
+        display: none;
+    }
+    
+    nav a {
+        display: none;
+    }
+    
+    nav .nav-itens a{
+        display: none;
+    }
+
+    nav input {
+        display: none;
+    }
+
+    section .search-bar input {
+        margin-top: 200px;
+        width: 500px;
+        border-radius: 4px;
+        border-style: none;
+        padding-left: 10px;
+        color: var(--white-color);
+        background: var(--dark-gray-blue);
+    }
+    
+    section .search-bar .fa-magnifying-glass {
+        color: #1d3b7d;
+        background-color: #539ac5;
+        border-radius: 3px;
+        margin-left: 3px;
+        padding: 4px 4px;
+        align-self: center;
+    }
+    
+}
