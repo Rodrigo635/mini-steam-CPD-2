@@ -7,7 +7,11 @@ crie uma nova env para rodar o projeto :) -
 # caso necessário:
 pip install virtualenv 
 
+# linux:
 python3 -m venv env
+
+# windows:
+py -m venv env
 
 # linux:
 source env/bin/activate
