@@ -216,10 +216,14 @@ class HashGeneros:
         self.genero_para_jogos = {}
 
     def adicionar_jogo(self, jogo):
+        # Pega o genero do jogo
         genero = jogo.genre
+        # Checa se já existe esse genero já tá na lista
         if genero in self.genero_para_jogos:
+            # Se o genero existe eu passo esse jogo do genero que já existe para a lista
             self.genero_para_jogos[genero].append(jogo)
         else:
+            # Se não existe crio uma nova lista e adiciono o jogo nela
             self.genero_para_jogos[genero] = [jogo]
 
     def obter_jogos(self, genero):
@@ -331,3 +335,42 @@ def games_por_genero(request, genre):
 
 def noticias(request):
     return render(request, 'noticias.html')
+
+
+def cadastro(request):
+    if request.method == "GET":
+        return render(request, 'cadastro.html')
+    else:
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        senha = request.POST.get('password')
+
+        user = User.objects.filter(username=username).first()
+
+        if user:
+            return render(request, 'cadastro.html', {'error': 'Usuário já cadastrado'})
+        
+        user = User.objects.create_user(username=username, email=email, password=senha)
+        user.save()
+
+        return redirect('login')
+
+def login(request):
+    if request.method == "GET":
+        return render(request, 'login.html')
+    else:
+        username = request.POST.get('username')
+        senha = request.POST.get('password')
+
+        user = authenticate(username=username, password=senha)
+
+        if user:
+            login_django(request, user)
+            return redirect('home')
+        else:
+            return render(request, 'login.html', {'error': 'Usuário ou senha inválidos'})
+
+def sair(request):
+    logout(request)
+    return redirect('home')        
+

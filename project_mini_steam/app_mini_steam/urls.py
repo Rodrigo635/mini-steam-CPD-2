@@ -8,4 +8,6 @@ urlpatterns = [
     path('categorias/', views.categorias, name='categorias'),
     path('games_por_genero/<str:genre>/', views.games_por_genero, name='games_por_genero'),
     path('noticias/', views.noticias, name='noticias'),
+    path('login/', views.login, name='login'),
+    path('cadastro/', views.cadastro, name='cadastro'),
 ]
