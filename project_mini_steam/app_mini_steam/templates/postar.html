@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<section class="postar">
+    <div class="box">
+        <h1>Postar</h1>
+        <form action="{% url 'postar' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="titulo" placeholder="Título...">
+            <input type="text" name="conteudo" placeholder="Conteudo...">
+            <input class="btn" type="submit" value="Postar">
+        </form>
+    </div>
+</section>
+
+<footer>
+    <img src="../static/images/steam_logo_white.png">
+    <p>Todos os direitos reservados a Mini-Steam, 2023.</p>
+</footer>
+
+{% endblock %}
