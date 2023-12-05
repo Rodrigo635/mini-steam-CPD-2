@@ -1,16 +1,32 @@
-{% extends "index.html" %}
-{% load static %}
+{% extends 'index.html' %}
 
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+<section class="comunidade">
+    <div class="box">
+        <h1>Notícias</h1>
+        {% for noticia in noticias %}
+            <div class="post">
+                <h2>{{ noticia.titulo }}</h2>
+                <p>{{ noticia.conteudo }}</p>
+                <a href="https://youtu.be/jUobGha1Wvk?si=NNL6RqOQbsZsM1RU">Veja mais</a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
 
-<section class="noticias">
+<footer>
+    <img src="../static/images/steam_logo_white.png">
+    <p>Todos os direitos reservados a Mini-Steam, 2023.</p>
+</footer>
+
+{% endblock %}
+
+<!-- <section class="noticias">
     <div class="noticias_div">
         <h2>Notícias</h2>
         <p>Um caminhão azul bateu na ponte do limão criando enorme trânsito na marginal</p>
         <a href="https://youtu.be/jUobGha1Wvk?si=NNL6RqOQbsZsM1RU">Veja mais</a>
     </div>
-</section>
+</section> -->
 
-{% endblock %}

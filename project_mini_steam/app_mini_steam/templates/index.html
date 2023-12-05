@@ -17,14 +17,14 @@
             <div class="navegation">
                 <div class="navegation-items">
                     <a href="{% url 'home' %}">LOJA</a>
-                    <a href="#">COMUNIDADE</a>
+                    <a href="{% url 'comunidade' %}">COMUNIDADE</a>
                     <a href="#">SOBRE</a>
                     <a href="#">SUPORTE</a>
                 </div>
             </div>
             <div class="login_itens">
                 {% if user.is_authenticated %}
-                <a href="{% url 'playlist' %}">Conta</a>
+                <a href="#">Bem-vindo {{ user.username }}</a>
                 <a href="{% url 'sair' %}">Sair</a>
                 {% else %}
                 <a href="{% url 'login' %}">Entrar</a>
@@ -35,7 +35,7 @@
 
         <nav>
             <div class="nav-itens">
-                <a href="{% url 'home' %}">Sua loja</a>
+                <a href="{% url 'sua_loja' %}">Sua loja</a>
                 <a href="#">Novidades e destaques</a>
                 <a href="{% url 'categorias' %}">Categorias</a>
                 <a href="#">Loja de pontos</a>

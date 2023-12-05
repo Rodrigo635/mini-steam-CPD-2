@@ -1,0 +1,100 @@
+:root {
+    --white-color: #e1e1e1;
+    --dark-blue-steam-color: #171d25;
+    --nav-color: #1d3b7d;
+    --bg: #1a2a3b;
+    --steam-blue: #1a9fff;
+    --dark-gray-blue: #316282;
+    --linear-gradient: linear-gradient(to left, #1b377a, #436994);
+}
+
+body {
+    background-image: url('../images/login_bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+}
+
+nav {
+    display: none;
+}
+
+.box {
+    width: 30%;
+    height: 45%;
+    margin: 0 auto;
+    margin-top: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: var(--dark-blue-steam-color);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box h1 {
+    color: var(--white-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.box input {
+    width: 300px;
+    height: 28px;
+    background-color: var(--dark-gray-blue);
+    margin: 10px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 1px;
+    color: var(--white-color);
+}
+
+.box .btn {
+    width: 140px;
+    height: 28px;
+    background-color: var(--steam-blue);
+    border: none;
+    border-radius: 1px;
+    padding-left: 0;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--dark-blue-steam-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 60px;
+    margin-top: 680px;
+}

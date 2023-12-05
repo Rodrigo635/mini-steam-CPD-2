@@ -9,24 +9,28 @@
   <title>Login</title>
 </head>
 
-<body>  
-  <section class="hero">
-    <div class="box">
+<body>
+  <div class="wrapper">
+    <section class="hero">
+      <div class="box">
         <form action="{% url 'login' %}" method="POST">
           {% csrf_token %}
-            <h1>Login</h1>
-            <input type="text" name="username" placeholder="Seu nome...">
-            <input type="password" name="password" placeholder="Senha...">
-            <input class="btn" type="submit" value="Login">
+          <h1>Login</h1>
+          <input type="text" name="username" placeholder="Seu nome...">
+          <input type="password" name="password" placeholder="Senha...">
+          <input class="btn" type="submit" value="Login">
         </form>
-    </div>
-  </section>
+      </div>
+    </section>
+  </div>
 
-  <footer class="fixar-rodape">
-    <p>Mini-Steam, 2023. All Rights Reserved.</p>
-  </footer>
 </body>
 
 </html>
+
+<footer>
+  <img src="../static/images/steam_logo_white.png">
+  <p>Todos os direitos reservados a Mini-Steam, 2023.</p>
+</footer>
 
 {% endblock %}

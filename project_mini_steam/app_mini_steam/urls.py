@@ -10,4 +10,8 @@ urlpatterns = [
     path('noticias/', views.noticias, name='noticias'),
     path('login/', views.login, name='login'),
     path('cadastro/', views.cadastro, name='cadastro'),
+    path('logout/', views.sair, name='sair'),
+    path('sua_loja/', views.sua_loja, name='sua_loja'),
+    path('comunidade/', views.comunidade, name='comunidade'),
+    path('postar/', views.postar, name='postar'),
 ]

@@ -3,29 +3,33 @@
 {% block content %}
 
 <head>
-  <link rel="stylesheet" href="../static/css/cadastro.css">
+  <link rel="stylesheet" href="../static/css/login.css">
   <title>Mini-Steam | Cadastro</title>
 </head>
 
 <body>  
-  <section class="hero">
-    <div class="box">
-        <form action="{% url 'cadastro' %}" method="POST">
-          {% csrf_token %}
-            <h1>Cadastrar</h1>
-            <input type="text" name="username" placeholder="Seu nome...">
-            <input type="email" name="email" placeholder="Seu E-mail...">
-            <input type="password" name="password" placeholder="Senha...">
-            <input class="btn" type="submit" value="Cadastrar">
-        </form>
-    </div>
-  </section>
+  <div class="wrapper">
+    <section class="hero">
+      <div class="box">
+          <form action="{% url 'cadastro' %}" method="POST">
+            {% csrf_token %}
+              <h1>Cadastrar</h1>
+              <input type="text" name="username" placeholder="Seu nome...">
+              <input type="email" name="email" placeholder="Seu E-mail...">
+              <input type="password" name="password" placeholder="Senha...">
+              <input class="btn" type="submit" value="Cadastrar">
+          </form>
+      </div>
+    </section>
+  </div>
 
-  <footer class="fixar-rodape">
-    <p>Mini-Steam, 2023. All Rights Reserved.</p>
-  </footer>
 </body>
 
 </html>
+
+<footer>
+  <img src="../static/images/steam_logo_white.png">
+  <p>Todos os direitos reservados a Mini-Steam, 2023.</p>
+</footer>
 
 {% endblock %}

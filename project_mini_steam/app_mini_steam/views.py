@@ -1,7 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .game_utils import generate_random_games
-from .models import Game
+from .models import Game, Post, Noticia
 from decimal import Decimal
+from django.contrib.auth import logout
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
+from django.contrib.auth import login as login_django
+from django.contrib.auth.decorators import login_required
+import random
+from .forms import PostForm
 
 
 def comentarios_inuteis_e_pesquisas():
@@ -334,7 +341,8 @@ def games_por_genero(request, genre):
 
 
 def noticias(request):
-    return render(request, 'noticias.html')
+    noticias = Noticia.objects.all()
+    return render(request, 'noticias.html', {'noticias': noticias})
 
 
 def cadastro(request):
@@ -344,7 +352,6 @@ def cadastro(request):
         username = request.POST.get('username')
         email = request.POST.get('email')
         senha = request.POST.get('password')
-
         user = User.objects.filter(username=username).first()
 
         if user:
@@ -352,7 +359,6 @@ def cadastro(request):
         
         user = User.objects.create_user(username=username, email=email, password=senha)
         user.save()
-
         return redirect('login')
 
 def login(request):
@@ -361,7 +367,6 @@ def login(request):
     else:
         username = request.POST.get('username')
         senha = request.POST.get('password')
-
         user = authenticate(username=username, password=senha)
 
         if user:
@@ -370,7 +375,33 @@ def login(request):
         else:
             return render(request, 'login.html', {'error': 'Usuário ou senha inválidos'})
 
+@login_required
 def sair(request):
     logout(request)
-    return redirect('home')        
+    return redirect('home')
 
+@login_required
+def sua_loja(request):
+    motor_busca = MotorBuscaJogos()
+    motor_busca.inicializar_catalogo()
+    todos_os_jogos = motor_busca.catalogo_jogos.jogos_em_ordem()
+    # Embaralho os jogos com o shuffle
+    random.shuffle(todos_os_jogos)
+    # E pego os 10 primeiros jogos com o slicing do python
+    jogos_aleatorios = todos_os_jogos[:10]
+    return render(request, 'home.html', {'games': jogos_aleatorios})
+
+def comunidade(request):
+    posts = Post.objects.all()
+    return render(request, 'comunidade.html', {'posts': posts})
+
+@login_required
+def postar(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            novo_post = form.save(commit=False)
+            novo_post.usuario = request.user
+            novo_post.save()
+            return redirect('comunidade')
+    return render(request, 'postar.html')
